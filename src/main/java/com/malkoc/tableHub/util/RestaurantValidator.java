@@ -12,9 +12,8 @@ public class RestaurantValidator {
     private final RestaurantRepository restaurantRepository;
 
     public void existByName(String name){
-        restaurantRepository.findByName(name).orElseThrow(
-                () -> new ClientException(ErrorConstants.RESTAURANT_NAME_ALREADY_EXIST)
-        );
+        if (restaurantRepository.findByName(name).isPresent()){
+            throw new ClientException(ErrorConstants.RESTAURANT_NAME_ALREADY_EXIST);
+        }
     }
-
 }

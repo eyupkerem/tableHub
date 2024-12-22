@@ -21,10 +21,12 @@ public class Address extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @OneToOne
     private Restaurant restaurant;
-    private String country;
+    private String number;
+    private String street;
+    private String avenue;
     private String city;
+    private String country;
     private String description;
 }

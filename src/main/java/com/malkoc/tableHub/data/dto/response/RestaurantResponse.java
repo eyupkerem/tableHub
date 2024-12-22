@@ -1,7 +1,5 @@
-package com.malkoc.tableHub.data.response;
+package com.malkoc.tableHub.data.dto.response;
 
-import com.malkoc.tableHub.data.entity.Address;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

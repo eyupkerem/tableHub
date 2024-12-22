@@ -1,8 +1,8 @@
 package com.malkoc.tableHub.data.mapper;
 
 import com.malkoc.tableHub.data.entity.Restaurant;
-import com.malkoc.tableHub.data.request.RestaurantSaveRequest;
-import com.malkoc.tableHub.data.response.RestaurantResponse;
+import com.malkoc.tableHub.data.dto.request.RestaurantSaveRequest;
+import com.malkoc.tableHub.data.dto.response.RestaurantResponse;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,11 +19,9 @@ public class RestaurantMapper {
 
     public Restaurant toRestaurant(RestaurantSaveRequest request){
         Restaurant restaurant = new Restaurant();
-        restaurant.setName(restaurant.getName());
-        restaurant.setPhoneNumber(restaurant.getPhoneNumber());
-        restaurant.setPhoneNumber(restaurant.getPhoneNumber());
-        restaurant.setAddress(restaurant.getAddress());
-        restaurant.setEmployees(restaurant.getEmployees());
+        restaurant.setName(request.getName());
+        restaurant.setPhoneNumber(request.getPhoneNumber());
+        restaurant.setPhoneNumber(request.getPhoneNumber());
         return restaurant;
     }
 

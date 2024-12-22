@@ -1,21 +1,20 @@
 package com.malkoc.tableHub.exception;
 
-
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
 public class ClientException extends RuntimeException {
 
-    private final String errorCode;
     private final HttpStatus httpStatus;
 
-    public ClientException(String code) {
-        this(code, HttpStatus.NOT_FOUND);
+    public ClientException(String message) {
+        this(message, HttpStatus.BAD_REQUEST);
     }
 
-    public ClientException(String code, HttpStatus httpStatus) {
-        this.errorCode = code;
+
+    public ClientException(String message, HttpStatus httpStatus) {
+        super(message);
         this.httpStatus = httpStatus;
     }
 }
