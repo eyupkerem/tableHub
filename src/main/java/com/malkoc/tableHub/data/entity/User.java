@@ -29,7 +29,7 @@ public class User extends BaseEntity {
     private String password;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Role> roles;
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id", referencedColumnName = "id", nullable = false)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     private Restaurant restaurant;
 }

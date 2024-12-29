@@ -28,4 +28,5 @@ public class RestaurantController {
     public ResponseEntity<RestaurantResponse> getRestaurant(@RequestParam(value = "id") Long id){
         return ResponseEntity.ok(restaurantService.getRestaurant(id));
     }
+
 }
