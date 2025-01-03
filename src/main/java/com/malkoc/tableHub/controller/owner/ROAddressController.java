@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(Constants.API_PREFIX + Constants.RESTAURANT_OWNER +  "/restaurant")
 @RequiredArgsConstructor
-public class RestaurantOwnerAddressController {
+public class ROAddressController {
 
     private final RestaurantOwnerAddressService restaurantOwnerAddressService;
 

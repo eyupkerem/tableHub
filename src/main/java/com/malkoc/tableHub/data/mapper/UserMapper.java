@@ -2,6 +2,7 @@ package com.malkoc.tableHub.data.mapper;
 
 import com.malkoc.tableHub.data.constants.ErrorConstants;
 import com.malkoc.tableHub.data.dto.request.UserSaveRequest;
+import com.malkoc.tableHub.data.dto.request.restaurantOwner.ROUserSaveRequest;
 import com.malkoc.tableHub.data.dto.response.UserResponse;
 import com.malkoc.tableHub.data.entity.Restaurant;
 import com.malkoc.tableHub.data.entity.User;
@@ -44,6 +45,17 @@ public class UserMapper {
             userResponse.setRestaurantName(null);
         }
         return userResponse;
+    }
+
+
+    public User toUser(ROUserSaveRequest ROUserSaveRequest) {
+        User user = new User();
+        user.setFirstName(ROUserSaveRequest.getFirstName());
+        user.setLastName(ROUserSaveRequest.getLastName());
+        user.setEmail(ROUserSaveRequest.getEmail());
+        user.setPassword(ROUserSaveRequest.getPassword());
+        user.setRestaurant(null); // Restaurant bilgisi olmadığı için null olarak ayarlanıyor
+        return user;
     }
 
 }
